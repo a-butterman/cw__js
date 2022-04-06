@@ -1,13 +1,18 @@
 function findMultiples(integer, limit) {
-    let num = [];
+    let num = []; //обьявил переменную с пустым массивом, что бы увидеть все его элементы
 
-    for (let i = 1; i <= limit; i += 1) {
-        if (integer * i <= limit) {
-            num.push(integer * i);
+    for (let i = 1; i <= limit; i++) { //для определения кратности будем умножать integer i-кол-во раз, где i не может быть больше, чем limit. И после каждой операции, i будет увеличиваться на 1.
+        if (integer * i <= limit) { //умножаем integer на i до тех пор, пока результат не станет <= limit.
+            num.push(integer * i); //метод .push добавляет значение(результат) в массив num.
         }
     }
-    return num;
+    return num; //оператор return после всех выполнений условий функции останавливает ее и возвращает значение в num.
 }
+/*
+Например, при таких значениях:
+findMultiples(4, 27)
+и вернется в num=[4, 8, 12, 16, 20, 24]
+ */
 
 /*
 In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base.
